@@ -8,6 +8,20 @@ Touch ID works in the Bitwarden desktop app, but Safari repeatedly asks for acce
 
 ## Quick setup
 
+### Guided installer (recommended)
+
+1. [Download the installer ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) and extract it. [Read its entire source](install.command) before running.
+2. Quit Safari (⌘Q), then double-click **install.command**. It requires Apple's Swift tools; if missing, it stops and explains how to install them through Apple.
+3. The installer verifies Bitwarden's signature and previews the exact permission change. Type **APPLY** only if you accept it. Authorize in macOS's own dialog if requested, then reopen Safari and test Touch ID.
+
+No administrator access is needed: run as your normal user, **without sudo**. Nothing is downloaded or installed in the background. The ZIP contains readable source and documentation, not a compiled app. If Terminal does not open the file, you can run `bash install.command` from its extracted folder after reviewing it. This installer is not notarized; if macOS blocks it, stop and use the manual method or seek support—do not disable system protections.
+
+Already fixed? It reports that and makes no change. For a non-interactive check only: `bash install.command --check`. The installer wrapper's check mode was tested on the already repaired Mac; a fresh repair through the new interactive wrapper has not been retested. Its embedded Swift repair is identical to the code previously applied successfully.
+
+[Installer checksum](INSTALLER-SHA256SUMS): place it beside `install.command` and run `shasum -a 256 -c INSTALLER-SHA256SUMS`. The release also includes a ZIP checksum. These verify file consistency, not independent trustworthiness.
+
+### Command-line alternative
+
 **For the single-account/default-Keychain case described below.** Requires Apple's Swift tools; if missing, run `xcode-select --install` first. Keep your normal master-password access.
 
 1. Quit Safari (⌘Q). [Read the complete script](fix.command), then [download fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) into Downloads.

@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Yönlendirmeli kurulum
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+ZIP’i indirip aç; kaynak kodunu okuduktan sonra Safari’yi kapat ve `install.command` dosyasına çift tıkla. Betik önce kontrol eder; değişiklik için `APPLY` yazmanı ister. `sudo` gerekmez. Apple Swift araçları gerekir. macOS engellerse korumaları kapatma; elle uygulama yöntemini kullan veya destek al.
+
 ## Hızlı kurulum
 
 Safari’yi ⌘Q ile kapat. [Betiğin tamamını oku](../fix.command), ardından [fix.command dosyasını indir](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) ve İndirilenler’e kaydet. Apple Swift araçları gerekir; yoksa önce `xcode-select --install` çalıştır. Tek hesap ve varsayılan Keychain düzeni içindir.

@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Instalação guiada
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+Extraia o ZIP, leia o código, encerre o Safari e abra `install.command`. Ele verifica primeiro; digite `APPLY` para aplicar. Não requer `sudo`, mas precisa de Swift da Apple. Se o macOS bloquear, não desative proteções; use o método manual ou procure ajuda.
+
 ## Configuração rápida
 
 Encerre o Safari (⌘Q). [Leia o código](../fix.command) e [baixe fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) em Downloads. Requer Swift da Apple; se faltar, use `xcode-select --install`. Apenas para uma conta e a configuração padrão de chaves.

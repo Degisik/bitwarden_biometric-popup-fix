@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## 引导式安装
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+解压 ZIP，阅读代码，退出 Safari，然后打开 `install.command`。脚本先检查，输入 `APPLY` 才会应用变更。不需要 `sudo`，但需要 Apple Swift 工具。如果 macOS 阻止运行，请勿关闭系统保护；使用手动方法或寻求支持。
+
 ## 快速设置
 
 退出 Safari（⌘Q）。[阅读全部脚本](../fix.command)，再将 [fix.command 下载](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command)到“下载”文件夹。需要 Apple Swift 工具；缺少时先运行 `xcode-select --install`。仅适用于单账户和默认钥匙串配置。

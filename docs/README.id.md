@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Pemasangan terpandu
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+Ekstrak ZIP, baca kode, tutup Safari, lalu buka `install.command`. Skrip memeriksa dahulu; ketik `APPLY` untuk menerapkan. Tidak perlu `sudo`, tetapi memerlukan Swift Apple. Jika macOS memblokirnya, jangan nonaktifkan perlindungan; gunakan cara manual atau cari bantuan.
+
 ## Penyiapan cepat
 
 Tutup Safari (⌘Q). [Baca kode](../fix.command), lalu [unduh fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) ke Downloads. Memerlukan Swift Apple; jika belum ada, jalankan `xcode-select --install`. Hanya untuk satu akun dan pengaturan Rantai Kunci bawaan.

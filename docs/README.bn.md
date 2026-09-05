@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## নির্দেশিত সেটআপ
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+ZIP খুলুন, কোড পড়ুন, Safari বন্ধ করে `install.command` খুলুন। আগে পরীক্ষা হবে; পরিবর্তনের জন্য `APPLY` লিখুন। `sudo` লাগে না; Apple Swift প্রয়োজন। macOS বাধা দিলে সুরক্ষা বন্ধ করবেন না; ম্যানুয়াল পদ্ধতি বা সহায়তা নিন।
+
 ## দ্রুত সেটআপ
 
 Safari বন্ধ করুন (⌘Q)। [সম্পূর্ণ কোড পড়ুন](../fix.command), তারপর [fix.command ডাউনলোড](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) করে Downloads-এ রাখুন। Apple Swift প্রয়োজন; না থাকলে `xcode-select --install` চালান। শুধু একটি অ্যাকাউন্ট ও ডিফল্ট Keychain-এর জন্য।

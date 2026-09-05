@@ -2,6 +2,12 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Пошаговая установка
+
+[ZIP](https://github.com/Degisik/bitwarden_biometric-popup-fix/releases/download/v1.0.0/bitwarden-biometric-installer-v1.0.0.zip) · [Source](../install.command) · [SHA-256](../INSTALLER-SHA256SUMS)
+
+Распакуйте ZIP, прочитайте код, закройте Safari и откройте `install.command`. Сначала проверка; для изменения введите `APPLY`. Без `sudo`, требуется Swift от Apple. Если macOS блокирует файл, не отключайте защиту; используйте ручной способ или обратитесь за помощью.
+
 ## Быстрая настройка
 
 Закройте Safari (⌘Q). [Прочитайте код](../fix.command) и [скачайте fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) в «Загрузки». Нужен Swift от Apple; если его нет, выполните `xcode-select --install`. Только для одного аккаунта и стандартной Связки ключей.
