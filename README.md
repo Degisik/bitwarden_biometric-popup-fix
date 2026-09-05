@@ -2,9 +2,33 @@
 
 Touch ID works in the Bitwarden desktop app, but Safari repeatedly asks for access to `Bitwarden_biometric`? This documents a workaround that resolved that symptom on one Mac.
 
-**Independent community documentation, not an official Bitwarden fix. No download, installer, extension, or remote script is required.** The complete local source is visible below. It changes permission to read a sensitive Keychain item, so review it before running it.
+**Independent community documentation, not an official Bitwarden fix. An optional readable setup script is available; the manual method requires no script download.** The complete local source is visible below. It changes permission to read a sensitive Keychain item, so review it before running it.
 
 [English](README.md) · [Türkçe](docs/README.tr.md) · [简体中文](docs/README.zh-CN.md) · [हिन्दी](docs/README.hi.md) · [Español](docs/README.es.md) · [العربية](docs/README.ar.md) · [Français](docs/README.fr.md) · [বাংলা](docs/README.bn.md) · [Português](docs/README.pt.md) · [Русский](docs/README.ru.md) · [Bahasa Indonesia](docs/README.id.md)
+
+## Quick setup
+
+**For the single-account/default-Keychain case described below.** Requires Apple's Swift tools; if missing, run `xcode-select --install` first. Keep your normal master-password access.
+
+1. Quit Safari (⌘Q). [Read the complete script](fix.command), then [download fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) into Downloads.
+2. Open Terminal and run the **check only**:
+
+   ```sh
+   cd ~/Downloads
+   bash fix.command
+   ```
+
+3. If the preview shows only Bitwarden desktop → desktop + its Safari component, apply:
+
+   ```sh
+   bash fix.command --apply
+   ```
+
+4. Authorize in macOS's own dialog if requested. After `save_acl=0`, reopen Safari and try Touch ID. `Already present; no changes` means the permission already exists.
+
+**What you are running:** one readable Bash file containing the same Swift repair used successfully here. It verifies the installed Safari component's signature, team and identifier; it does not read the secret value, contact a server, install a background service, or use `sudo`. Only `--apply` persists the permission. Unexpected results or rejected authorization: stop; do not broaden access. Multiple matching Keychain items/accounts are outside this script's scope.
+
+Optional integrity check: download [SHA256SUMS](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/SHA256SUMS) into the same folder and run `shasum -a 256 -c SHA256SUMS`. This checks consistency with the published file, **not independent proof that it is safe**. Review the source. The longer copy-and-paste method below remains available without downloading a script.
 
 ## What was actually confirmed
 
@@ -125,7 +149,7 @@ Run the same command without `--apply` again. The `Before` list should include b
 
 This adds a persistent trust entry. To undo it, open Keychain Access → the affected `Bitwarden_biometric` item → Access Control. Remove **only the entry whose path is the embedded `safari.appex`**, retain the desktop entry, and save through macOS authorization. Removal through this GUI has not been tested for this guide. If the entries have indistinguishable labels or the control is unavailable, stop and ask Bitwarden support for a targeted ACL rollback rather than deleting the item or guessing. Disabling biometric unlock is not a verified rollback of this ACL change.
 
-The applied code and macOS version are recorded above; future versions may change the layout or behavior. Apple's legacy SecKeychain/SecACL APIs used here are deprecated, matching the relevant Bitwarden implementation. An official fix may supersede this workaround. The repository has no automatic execution, telemetry or binary releases. Avoid posting account identifiers or unredacted Keychain dumps.
+The applied code and macOS version are recorded above; future versions may change the layout or behavior. Apple's legacy SecKeychain/SecACL APIs used here are deprecated, matching the relevant Bitwarden implementation. An official fix may supersede this workaround. The optional setup script makes no network requests and has no telemetry or binary payloads. It creates and removes only its own temporary source directory. Avoid posting account identifiers or unredacted Keychain dumps.
 
 ## Sources and translations
 

@@ -2,6 +2,27 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Configuração rápida
+
+Encerre o Safari (⌘Q). [Leia o código](../fix.command) e [baixe fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) em Downloads. Requer Swift da Apple; se faltar, use `xcode-select --install`. Apenas para uma conta e a configuração padrão de chaves.
+
+Primeiro, apenas verificar:
+
+```sh
+cd ~/Downloads
+bash fix.command
+```
+
+Se a prévia adicionar somente o componente Safari ao aplicativo desktop:
+
+```sh
+bash fix.command --apply
+```
+
+Autorize somente na janela do macOS. Após `save_acl=0`, abra o Safari e teste Touch ID. O script é texto legível, sem rede, `sudo` ou leitura do segredo. Só `--apply` grava a permissão. Pare diante de resultados inesperados. [Detalhes e integridade](../README.md#quick-setup).
+
+---
+
 Este guia documenta uma solução confirmada em um Mac: Touch ID funcionava no Bitwarden para desktop, mas o Safari repetia o pedido de acesso a `Bitwarden_biometric`. Versões: macOS/Safari 26.5.2 e Bitwarden 2026.8.0. Não é uma correção oficial nem universal.
 
 A lista autorizava o aplicativo desktop, mas não `/Applications/Bitwarden.app/Contents/PlugIns/safari.appex`. Adicionamos somente esse componente assinado e preservamos as outras permissões. Isso concede acesso persistente a um item sensível. O código não lê nem altera o segredo e não autoriza todos os aplicativos.

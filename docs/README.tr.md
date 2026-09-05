@@ -2,6 +2,27 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Hızlı kurulum
+
+Safari’yi ⌘Q ile kapat. [Betiğin tamamını oku](../fix.command), ardından [fix.command dosyasını indir](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) ve İndirilenler’e kaydet. Apple Swift araçları gerekir; yoksa önce `xcode-select --install` çalıştır. Tek hesap ve varsayılan Keychain düzeni içindir.
+
+Önce yalnız kontrol:
+
+```sh
+cd ~/Downloads
+bash fix.command
+```
+
+Önizleme yalnız masaüstü → masaüstü + Safari bileşeni değişikliğini gösteriyorsa uygula:
+
+```sh
+bash fix.command --apply
+```
+
+Gerekirse parolanı yalnız macOS penceresine gir. `save_acl=0` sonrasında Safari’yi açıp Touch ID’yi dene. Betik kaynak kodu açık bir metindir; ağ isteği, `sudo` veya gizli anahtar okuması yapmaz. Kalıcı izin değişikliği yalnız `--apply` ile olur. Beklenmedik sonuçta dur. [Ayrıntılar ve dosya özeti doğrulaması](../README.md#quick-setup).
+
+---
+
 Masaüstünde Touch ID çalışırken Safari sürekli `Bitwarden_biometric` izni istiyorsa bu rehber, bir Mac’te başarıyla uygulanan çözümü anlatır. Resmî Bitwarden düzeltmesi değildir. macOS/Safari 26.5.2 ve Bitwarden 2026.8.0 üzerinde kullanıcı başarıyı doğruladı.
 
 Sorunlu kaydın anahtar okuma izin listesinde masaüstü uygulaması vardı, gömülü Safari bileşeni yoktu. Yalnız `/Applications/Bitwarden.app/Contents/PlugIns/safari.appex` eklendi; diğer yetkiler korundu. Bu, hassas kayda kalıcı erişim verir. Kasa anahtarı okunmaz veya değiştirilmez; tüm uygulamalara izin verilmez.

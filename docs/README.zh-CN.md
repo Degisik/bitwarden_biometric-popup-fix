@@ -2,6 +2,27 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## 快速设置
+
+退出 Safari（⌘Q）。[阅读全部脚本](../fix.command)，再将 [fix.command 下载](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command)到“下载”文件夹。需要 Apple Swift 工具；缺少时先运行 `xcode-select --install`。仅适用于单账户和默认钥匙串配置。
+
+先只检查：
+
+```sh
+cd ~/Downloads
+bash fix.command
+```
+
+预览仅将 Safari 组件加入桌面应用的访问列表时，再应用：
+
+```sh
+bash fix.command --apply
+```
+
+仅在 macOS 系统对话框中授权。出现 `save_acl=0` 后打开 Safari 测试 Touch ID。脚本为可读文本，不联网、不使用 `sudo`、不读取秘密值；只有 `--apply` 会保存权限。结果异常时请停止。[详情与完整性检查](../README.md#quick-setup)。
+
+---
+
 本文记录了在一台 Mac 上成功的方法：桌面版 Bitwarden 的 Touch ID 正常，但 Safari 反复请求访问 `Bitwarden_biometric`。用户在 macOS/Safari 26.5.2、Bitwarden 2026.8.0 上确认问题已解决。这不是官方修复，也不保证适用于所有类似问题。
 
 原有访问列表包含桌面应用，却没有 `/Applications/Bitwarden.app/Contents/PlugIns/safari.appex`。我们只添加了这个已签名组件，并保留其他权限。这会授予对敏感项目的持久访问权；代码不会读取或修改秘密值，也不会允许所有应用访问。

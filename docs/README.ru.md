@@ -2,6 +2,27 @@
 
 [English](../README.md) · [Türkçe](README.tr.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [العربية](README.ar.md) · [Français](README.fr.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [Bahasa Indonesia](README.id.md)
 
+## Быстрая настройка
+
+Закройте Safari (⌘Q). [Прочитайте код](../fix.command) и [скачайте fix.command](https://github.com/Degisik/bitwarden_biometric-popup-fix/raw/refs/heads/main/fix.command) в «Загрузки». Нужен Swift от Apple; если его нет, выполните `xcode-select --install`. Только для одного аккаунта и стандартной Связки ключей.
+
+Сначала только проверка:
+
+```sh
+cd ~/Downloads
+bash fix.command
+```
+
+Если предварительный просмотр добавляет только компонент Safari к настольному приложению:
+
+```sh
+bash fix.command --apply
+```
+
+Подтверждайте только в окне macOS. После `save_acl=0` откройте Safari и проверьте Touch ID. Скрипт — читаемый текст, без сети, `sudo` и чтения секрета. Только `--apply` сохраняет разрешение. При неожиданном результате остановитесь. [Подробности и целостность](../README.md#quick-setup).
+
+---
+
 Здесь описан способ, который помог на одном Mac: Touch ID работал в настольном Bitwarden, а Safari постоянно запрашивал доступ к `Bitwarden_biometric`. Пользователь подтвердил результат на macOS/Safari 26.5.2 и Bitwarden 2026.8.0. Это не официальное исправление и не универсальное решение.
 
 В списке разрешённых приложений было настольное приложение, но отсутствовало `/Applications/Bitwarden.app/Contents/PlugIns/safari.appex`. Добавили только этот подписанный компонент, сохранив остальные разрешения. Это постоянный доступ к конфиденциальному элементу. Код не читает и не меняет секрет и не разрешает доступ всем приложениям.
